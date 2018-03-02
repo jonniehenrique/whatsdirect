@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Whats Direct </title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<h1 class="title"> Whats Direct <i class="fa fa-message"></i> </h1>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			
+			<div class="box">
+				<label for="#"> Número </label>
+				<input type="text" id="number" placeholder="Insira o número de telefone">
+				<br>
+
+				<a href="" target="blank" id="send" class="btn-send"> Enviar <i class="fa fa-send"></i></a>
+			</div>
+
+		</div>
+	</main>
+	
+	<script type="text/javascript">
+		const url = 'https://api.whatsapp.com/send?phone=55';
+		let button = document.getElementById('send');
+		let input  = document.getElementById('number');
+
+		input.addEventListener('keyup', function() {
+			button.setAttribute('href', url + this.value.replace(/\s/g,''));
+			//console.log(this.value);
+		});
+		
+	</script>
+</body>
+</html>
