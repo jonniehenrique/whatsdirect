@@ -23,7 +23,7 @@
 			
 			<div class="box">
 				<label for="#"> DDD + Número </label>
-				<input type="text" id="number" placeholder="Insira o número de telefone">
+				<input type="text" id="number" placeholder="Insira o número de telefone" maxlength="11">
 				<br>
 
 				<a href="" target="blank" id="send" class="btn-send"> Enviar <i class="fa fa-send"></i></a>
@@ -38,8 +38,11 @@
 		let input  = document.getElementById('number');
 
 		input.addEventListener('keyup', function() {
-			button.setAttribute('href', url + this.value.replace(/\s/g,''));
-			//console.log(this.value);
+			let value = this.value.replace(/[^0-9]/g,'');
+
+			if (value.length !== 0) {
+				button.setAttribute('href', url + value);
+			}
 		});
 		
 	</script>

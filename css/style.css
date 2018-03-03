@@ -16,9 +16,17 @@
 }
 
 html, body {
+    min-width: 320px;
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
+    font-size: 8px;
     position: relative;	
+}
+
+@media all and (min-width: 992px) {
+
+    html, body {
+        font-size: 10px;
+    }
 }
 
 a, a:hover, a:active {
@@ -39,10 +47,6 @@ h1 {
 }
 /* RESPONSIVE */
 
-@media all and (min-width: 620px) {}
-
-@media all and (min-width: 768px) {}
-
 @media all and (min-width: 992px) {
 
     .container {
@@ -50,18 +54,16 @@ h1 {
     }
 }
 
-@media all and (min-width: 1280px) {}
-
 /* App */
 
 header {
     background-color: #f2f2f2;
-    padding: 30px 10px;
+    padding: 30px 0;
     text-align: center;
 }
 
 main {
-    padding: 30px 10px;
+    padding: 30px 0;
     display: flex;
     align-items: center;
     justify-content: center;
