@@ -22,9 +22,9 @@
 		<div class="container">
 			
 			<div class="box">
-				<input type="text" id="number" maxlength="11" placeholder="DDD + número">
+				<input type="text" id="number" placeholder="DDD + número">
 				<br>
-				<a href="" target="blank" id="send" class="btn-send"> <i class="fa fa-send"></i></a>
+				<a href="#" target="blank" id="send" class="btn-send"> <i class="fa fa-send"></i></a>
 			</div>
 			<p class="box-text"> válido apenas números nacionais (Brasil) </p>
 
@@ -36,14 +36,22 @@
 		let button = document.getElementById('send');
 		let input  = document.getElementById('number');
 
-		input.addEventListener('inputs', function() {
-			let value = this.value.replace(/[^0-9]/g,'');
+		button.addEventListener('click', function(e) {
+			let value = input.value.replace(/[^0-9]/g,'');
 
-			if (value.length !== 0) {
-				console.log(url + value); return false;
-
-				button.setAttribute('href', url + value);
+			if (value.length == 0) {
+				alert('Digite o número');
+				e.preventDefault();
+				return false;
 			}
+
+			if (value.length < 10) {
+				alert('Digite um número válido');
+				e.preventDefault();
+				return false;
+			}
+
+			button.setAttribute('href', url + value);
 		});
 		
 	</script>
