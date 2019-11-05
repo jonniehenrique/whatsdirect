@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Whats Direct </title>
+	<title> whatsdirect - Adicione e inicie o chat sem precisar salvar o número :) </title>
 	<link rel="icon" href="favicon.png">
 
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
@@ -14,7 +14,7 @@
 
 	<header>
 		<div class="container">
-			<h1 class="title"> Whats Direct <i class="fa fa-message"></i> </h1>
+			<h1 class="title"> <img src="favicon.png"> whats<span>direct</span> </h1>
 		</div>
 	</header>
 
@@ -22,12 +22,11 @@
 		<div class="container">
 			
 			<div class="box">
-				<label for="#"> DDD + Número </label>
-				<input type="text" id="number" placeholder="Insira o número de telefone" maxlength="11">
+				<input type="text" id="number" maxlength="11" placeholder="DDD + número">
 				<br>
-
-				<a href="" target="blank" id="send" class="btn-send"> Enviar <i class="fa fa-send"></i></a>
+				<a href="" target="blank" id="send" class="btn-send"> <i class="fa fa-send"></i></a>
 			</div>
+			<p class="box-text"> válido apenas números nacionais (Brasil) </p>
 
 		</div>
 	</main>
@@ -37,10 +36,12 @@
 		let button = document.getElementById('send');
 		let input  = document.getElementById('number');
 
-		input.addEventListener('keyup', function() {
+		input.addEventListener('inputs', function() {
 			let value = this.value.replace(/[^0-9]/g,'');
 
 			if (value.length !== 0) {
+				console.log(url + value); return false;
+
 				button.setAttribute('href', url + value);
 			}
 		});
